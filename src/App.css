@@ -1,42 +1,194 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* -------------------------------------- */
+/* CSS COMPLETO PARA PANTALLA DE LOGIN MODERNA */
+/* -------------------------------------- */
+
+/* 1. SETUP BÁSICO Y TIPOGRAFÍA (Google Font: Inter) */
+/* -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Variables para fácil personalización */
+/* Variables Dark Mode */
+:root {
+  --color-acento: #4a90e2;    /* Azul claro o cian, bien visible sobre oscuro */
+  --color-fondo: #1e1e1e;     /* Gris muy oscuro, casi negro */
+  --color-caja: #2a2a2a;      /* Tono ligeramente más claro para la caja de login */
+  --color-texto: #f0f0f0;     /* Texto claro */
+  --color-texto-claro: #bbb;  /* Texto secundario (labels, links) */
+  --color-borde: #444;        /* Bordes sutiles */
+  --color-sombra: rgba(0, 0, 0, 0.4); /* Sombra más oscura para la profundidad */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    
+    /* 🔥 CORRECCIÓN CRÍTICA PARA CENTRADO TOTAL 🔥 */
+    display: flex; /* Habilita flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Ocupa toda la altura de la vista */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 2. CONTENEDOR PRINCIPAL Y CAJA DE LOGIN */
+/* -------------------------------------- */
+
+/* La clase login-container no es estrictamente necesaria si el body centra */
+/* Pero es útil para escalabilidad. Si la usás, asegurate que ocupe todo el espacio: */
+.login-container {
+    width: 100%;
+    /* max-width: 1200px;  Opcional si es un contenedor general */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.card {
-  padding: 2em;
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: var(--borde-radio);
+    box-shadow: 0 12px 30px var(--color-sombra); /* Sombra más pronunciada pero elegante */
+    width: 100%;
+    max-width: 380px; /* Tamaño del formulario */
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.login-box:hover {
+    transform: translateY(-2px);
+}
+
+.login-box h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #2c3e50;
+}
+
+/* 3. ESTILOS DE FORMULARIO E INPUTS */
+/* -------------------------------------- */
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* IMP. para que padding no agrande el ancho */
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto Focus (color de acento) */
+.input-group input:focus {
+    border-color: var(--color-acento);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* 4. BOTÓN PRINCIPAL Y ENLACES SECUNDARIOS */
+/* -------------------------------------- */
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px; /* Más espacio sobre el botón */
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.links-secundarios {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #777;
+}
+
+.links-secundarios a {
+    color: #777;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.links-secundarios a:hover {
+    color: var(--color-acento);
+    text-decoration: underline;
+}
+
+.links-secundarios span {
+    margin: 0 10px;
+}
+
+/* 5. MENSAJES DE ERROR (React Hook Form) */
+/* -------------------------------------- */
+
+.error-message {
+    color: #e74c3c; /* Rojo de error */
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* -------------------------------------- */
+/* 6. BOTÓN DE CERRAR SESIÓN (Logout/Danger) */
+/* -------------------------------------- */
+
+/* Hereda todas las propiedades de .btn-primary, pero cambia el color */
+.btn-logout {
+  /* El color rojo para indicar una acción de "peligro" o final */
+  background-color: #e74c3c; 
+  transition: background-color 0.3s, transform 0.1s;
+  
+  /* Aseguramos que herede la forma de .btn-primary */
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white; /* Letras blancas */
+}
+
+/* Efecto de 'Hover' */
+.btn-logout:hover {
+  background-color: #c0392b; /* Un rojo un poco más oscuro */
+}
+
+/* Efecto de 'Active' (al hacer clic) */
+.btn-logout:active {
+  transform: translateY(1px);
+}
+
+.simple-text {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #555
 }
