@@ -23,7 +23,7 @@ const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     const formData = new FormData();
-    formData.append("username", data.user);
+    formData.append("username", data.username);
     formData.append("password", data.password);
     try {
       const response = await fetch(LOGIN_ENDPOINT, {
