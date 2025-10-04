@@ -116,7 +116,7 @@ const ClientesPorCiudad = () => {
   return (
     <div className="login-container">
       {" "}
-      <div className="content-box" style={{ maxWidth: "600px", width: "90%" }}>
+      <div className="login-box" style={{ maxWidth: "600px", width: "90%" }}>
         <div>
           <h1 style={{ margin: 0 }}>Reporte Clientes por Ciudad</h1>
         </div>
