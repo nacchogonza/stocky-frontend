@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
+import { USER_ENDPOINT } from "../utils/routes";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-const USER_ENDPOINT = `${API_BASE_URL}/api/v1/users/me`;
 
 const fetchUser = async (fullEndpoint, options = {}) => {
-  // 1. Obtener el token de localStorage
   const token = localStorage.getItem("authToken");
 
   if (!token) {
@@ -66,11 +64,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="login-container">
+    <div className="content-container">
         {!loading ? (
 
 
-      <div className="content-box">
+      <div className="content-home-box">
         <h1>Bienvenido a Stocky</h1>
         {user?.full_name && user?.email ? (
           <>
