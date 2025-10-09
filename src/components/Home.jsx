@@ -50,6 +50,7 @@ const Home = () => {
               <p className="simple-text">- Email: {user?.email}</p>
             </>
           ) : null}
+          <h3>Reportes</h3>
           <div className="buttons-container">
             <button
               onClick={() => {
@@ -85,6 +86,110 @@ const Home = () => {
               className="btn-red"
             >
               Stock por Producto
+            </button>
+          </div>
+          <h3>Productos</h3>
+          <div className="buttons-container">
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Agregar Producto
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Ver Productos
+            </button>
+          </div>
+
+          <h3>Clientes</h3>
+          <div className="buttons-container">
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Agregar Cliente
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Ver Clientes
+            </button>
+          </div>
+
+          <h3>Proveedores</h3>
+          <div className="buttons-container">
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Agregar Proveedor
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Ver Proveedores
+            </button>
+          </div>
+
+          <h3>Sucursales</h3>
+          <div className="buttons-container">
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Agregar Sucursal
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Ver Sucursales
+            </button>
+          </div>
+
+          <h3>Depósitos</h3>
+          <div className="buttons-container">
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Agregar Depósito
+            </button>
+
+            <button
+              onClick={() => {
+                navigate("#");
+              }}
+              className="btn-red"
+            >
+              Ver Depósitos
             </button>
           </div>
         </div>
