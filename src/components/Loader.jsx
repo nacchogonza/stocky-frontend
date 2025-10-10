@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="content-home-box">
+    <div className="content-loader-box">
       <span class="loader"></span>
     </div>
   );

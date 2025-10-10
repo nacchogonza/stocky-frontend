@@ -90,6 +90,25 @@ body {
   
 }
 
+.loader-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content-loader-box {
+  background: white;
+  padding: 40px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /* Login */
 .login-box {
   background: white;
