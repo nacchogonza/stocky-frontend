@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+import logoStocky from '../../../public/logo_gemini_3.png'
 
 const Header = () => {
   const { logout } = useAuth();
@@ -13,8 +14,12 @@ const Header = () => {
 
   return (
     <header className="app-header">
-      <a className="logo" href="/">
-        <h1>Stocky</h1>
+      <a className="logo-anchor" href="/">
+        {/* <h1>Stocky</h1> */}
+        <img
+          src={logoStocky}
+          className="logo-image"
+        />
       </a>
 
       {/* <nav className="nav-links">

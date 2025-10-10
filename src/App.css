@@ -38,6 +38,17 @@ body {
   min-width: 1200px;
 }
 
+.logo-image {
+  height: 50px;
+  width: 160px;
+  overflow: hidden;
+}
+
+.logo-anchor {
+  height: 50px;
+  width: 160px;
+}
+
 .app-header {
   background-color: var(--color-header);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -51,12 +62,6 @@ body {
   top: 0;
   z-index: 100;
   width: 100%;
-}
-
-.app-header .logo h1 {
-  font-size: 24px;
-  margin: 0;
-  color: var(--color-acento);
 }
 
 .app-header .nav-links a {
