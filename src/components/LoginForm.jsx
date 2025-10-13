@@ -2,14 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "../App.css";
 
-import { useAuth } from '../auth/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../auth/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { LOGIN_ENDPOINT } from "../utils/routes";
 
 const LoginForm = () => {
-
-    const { login } = useAuth();
-const navigate = useNavigate();
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -26,7 +25,7 @@ const navigate = useNavigate();
         method: "POST",
         body: formData,
       });
-      
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(
@@ -41,7 +40,7 @@ const navigate = useNavigate();
 
       login(jwtToken);
 
-      navigate('/', { replace: true });
+      navigate("/", { replace: true });
     } catch (error) {
       console.error("Error de autenticación:", error.message);
       alert(`Fallo en el Login: ${error.message}`);
@@ -60,7 +59,9 @@ const navigate = useNavigate();
               type="text"
               id="username"
               placeholder="Username"
-              {...register("username", { required: "El username es obligatorio" })}
+              {...register("username", {
+                required: "El username es obligatorio",
+              })}
             />
             {errors.username && (
               <p className="error-message">{errors.username.message}</p>
@@ -82,19 +83,9 @@ const navigate = useNavigate();
             )}
           </div>
 
-          <button
-            type="submit"
-            className="btn-primary"
-            disabled={isSubmitting}
-          >
+          <button type="submit" className="btn-primary" disabled={isSubmitting}>
             {isSubmitting ? "Cargando..." : "Entrar"}
           </button>
-
-          <div className="links-secundarios">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-            <span>|</span>
-            <a href="#">Crear una cuenta</a>
-          </div>
         </form>
       </div>
     </div>
