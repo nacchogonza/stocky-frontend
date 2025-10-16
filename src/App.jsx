@@ -1,10 +1,14 @@
+// src/App.jsx
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Home from "./components/Home";
 import ClientesPorCiudad from "./components/reportes/ClientesPorCiudad";
+import ReporteRemitos from "./components/reportes/ReporteRemitos.jsx"; // IMPORTADO
 import AppLayout from "./components/layout/AppLayout";
+
 
 function App() {
   return (
@@ -28,6 +32,17 @@ function App() {
             </AppLayout>
           }
         />
+        
+        
+        <Route
+          path="/ventas" 
+          element={
+            <AppLayout>
+              <ReporteRemitos /> 
+            </AppLayout>
+          }
+        />
+        
       </Route>
 
       <Route path="*" element={<AppLayout><h1>404 - Página no encontrada</h1></AppLayout>} />
