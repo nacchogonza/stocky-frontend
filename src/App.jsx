@@ -4,6 +4,7 @@ import LoginForm from "./components/LoginForm";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Home from "./components/Home";
 import ClientesPorCiudad from "./components/reportes/ClientesPorCiudad";
+import ProductosPorProveedor from "./components/reportes/ProductosPorProveedor";
 import AppLayout from "./components/layout/AppLayout";
 
 function App() {
@@ -25,6 +26,14 @@ function App() {
           element={
             <AppLayout>
               <ClientesPorCiudad />
+            </AppLayout>
+          }
+        />
+        <Route
+          path="/Productos-por-Proveedor"
+          element={
+            <AppLayout>
+              <ProductosPorProveedor />
             </AppLayout>
           }
         />
