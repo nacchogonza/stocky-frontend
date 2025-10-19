@@ -26,6 +26,7 @@ const ProductosPorProveedor = () => {
 
         setReportLoading(true);
         setReportData(null);
+        setError(null); /*Limpia el error previo*/
 
         try {
         const endpoint = `${REPORTES_PRODUCTOS_POR_PROVEEDORES_ENDPOINT}${SupplierId}`;
@@ -38,11 +39,14 @@ const ProductosPorProveedor = () => {
 
         if (!response.ok) {
             const errorBody = await response.json();
-            throw new Error(errorBody.detail || "Fallo al cargar el reporte");
+            const errorMessage= errorBody.detail || "Fallo al cargar el reporte";
+            throw new Error(`No se encontraron productos para este proveedor`);
+
         }
 
         const data = await response.json();
         setReportData(data);
+        setError(null);
         } catch (err) {
         console.error("Error al cargar reporte:", err);
         setError(`Error: ${err.message}`);
@@ -142,7 +146,7 @@ const ProductosPorProveedor = () => {
                 <div className="summary-card">
                 <h3>Resumen del Reporte</h3>
                 <p>
-                    <strong>Proveedor:</strong> {reportData.nombre_proveedor},{" "}
+                    <strong>Proveedor:</strong> {reportData.nombre_proveedor}{" "}
                     
                 </p>
                 </div>
