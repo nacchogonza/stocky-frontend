@@ -16,7 +16,6 @@ import ListarProveedores from "./components/proveedores/ListarProveedores";
 import ListarDepositos from "./components/depositos/ListarDepositos";
 import ListarSucursales from "./components/sucursales/ListarSucursales";
 
-
 function App() {
   return (
     <Routes>
@@ -31,7 +30,7 @@ function App() {
             </AppLayout>
           }
         />
-            
+
         <Route
           path="/clientes-por-ciudad"
           element={
@@ -85,27 +84,25 @@ function App() {
             </AppLayout>
           }
         />
-            
-          <Route
-            path="/stock-por-producto"
-            element={
-              <AppLayout>
-                <ReporteStock />
-              </AppLayout>
-            }
-          />
-          
-        
-        
+
         <Route
-          path="/ventas" 
+          path="/stock-por-producto"
           element={
             <AppLayout>
-              <ReporteRemitos /> 
+              <ReporteStock />
             </AppLayout>
           }
         />
-        
+
+        <Route
+          path="/ventas"
+          element={
+            <AppLayout>
+              <ReporteRemitos />
+            </AppLayout>
+          }
+        />
+
         <Route
           path="/Productos-por-Proveedor"
           element={
