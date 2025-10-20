@@ -6,6 +6,7 @@ import LoginForm from "./components/LoginForm";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Home from "./components/Home";
 import ClientesPorCiudad from "./components/reportes/ClientesPorCiudad";
+import ReporteStock from "./components/reportes/ReporteStock";
 import ReporteRemitos from "./components/reportes/ReporteRemitos.jsx"; // IMPORTADO
 import ProductosPorProveedor from "./components/reportes/ProductosPorProveedor";
 import AppLayout from "./components/layout/AppLayout";
@@ -33,6 +34,15 @@ function App() {
             </AppLayout>
           }
         />
+          <Route
+            path="/stock-por-producto"
+            element={
+              <AppLayout>
+                <ReporteStock />
+              </AppLayout>
+            }
+          />
+          
         
         
         <Route
