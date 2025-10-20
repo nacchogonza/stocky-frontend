@@ -106,7 +106,7 @@ const Home = () => {
 
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/productos");
                 }}
                 className="btn-red"
               >
@@ -127,7 +127,7 @@ const Home = () => {
 
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/clientes");
                 }}
                 className="btn-red"
               >
@@ -148,7 +148,7 @@ const Home = () => {
 
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/proveedores");
                 }}
                 className="btn-red"
               >
@@ -169,7 +169,7 @@ const Home = () => {
 
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/sucursales");
                 }}
                 className="btn-red"
               >
@@ -190,7 +190,7 @@ const Home = () => {
 
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/depositos");
                 }}
                 className="btn-red"
               >

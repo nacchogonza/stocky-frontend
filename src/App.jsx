@@ -5,6 +5,11 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import Home from "./components/Home";
 import ClientesPorCiudad from "./components/reportes/ClientesPorCiudad";
 import AppLayout from "./components/layout/AppLayout";
+import ListarProductos from "./components/productos/ListarProductos";
+import ListarClientes from "./components/clientes/ListarClientes";
+import ListarProveedores from "./components/proveedores/ListarProveedores";
+import ListarDepositos from "./components/depositos/ListarDepositos";
+import ListarSucursales from "./components/sucursales/ListarSucursales";
 
 function App() {
   return (
@@ -28,9 +33,61 @@ function App() {
             </AppLayout>
           }
         />
+
+        <Route
+          path="/productos"
+          element={
+            <AppLayout>
+              <ListarProductos />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/clientes"
+          element={
+            <AppLayout>
+              <ListarClientes />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/proveedores"
+          element={
+            <AppLayout>
+              <ListarProveedores />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/depositos"
+          element={
+            <AppLayout>
+              <ListarDepositos />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/sucursales"
+          element={
+            <AppLayout>
+              <ListarSucursales />
+            </AppLayout>
+          }
+        />
       </Route>
 
-      <Route path="*" element={<AppLayout><h1>404 - Página no encontrada</h1></AppLayout>} />
+      <Route
+        path="*"
+        element={
+          <AppLayout>
+            <h1>404 - Página no encontrada</h1>
+          </AppLayout>
+        }
+      />
     </Routes>
   );
 }
