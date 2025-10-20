@@ -118,6 +118,7 @@ body {
   width: 100%;
   text-align: center;
   transition: transform 0.3s ease;
+  min-width: 350px;
 }
 
 .login-box:hover {

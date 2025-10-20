@@ -7,6 +7,7 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import Home from "./components/Home";
 import ClientesPorCiudad from "./components/reportes/ClientesPorCiudad";
 import ReporteRemitos from "./components/reportes/ReporteRemitos.jsx"; // IMPORTADO
+import ProductosPorProveedor from "./components/reportes/ProductosPorProveedor";
 import AppLayout from "./components/layout/AppLayout";
 
 
@@ -43,6 +44,14 @@ function App() {
           }
         />
         
+        <Route
+          path="/Productos-por-Proveedor"
+          element={
+            <AppLayout>
+              <ProductosPorProveedor />
+            </AppLayout>
+          }
+        />
       </Route>
 
       <Route path="*" element={<AppLayout><h1>404 - Página no encontrada</h1></AppLayout>} />

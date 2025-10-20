@@ -8,3 +8,5 @@ export const REPORTES_CLIENTES_POR_CIUDAD_ENDPOINT = `${API_BASE_URL}/api/v1/rep
 
 
 export const REPORTE_VENTAS_ENDPOINT = `${API_BASE_URL}/api/v1/reports/ventas`;
+export const PROVEEDORES_ENDPOINT = `${API_BASE_URL}/api/v1/proveedor/`;
+export const REPORTES_PRODUCTOS_POR_PROVEEDORES_ENDPOINT = `${API_BASE_URL}/api/v1/reports/productos_por_proveedor/`;
