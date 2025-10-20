@@ -1,44 +1,31 @@
-export function getAuthToken() {
-    return localStorage.getItem("authToken"); 
-}
+/**
+ * Realiza una petición fetch autenticada con un Bearer Token.
+ * NOTA: Esta función DEBERÍA estar en un archivo de utilidad externo, pero la mantenemos aquí por ahora.
+ * * @param {string} fullEndpoint - La URL completa a la que hacer la petición.
+ * @param {object} options - Opciones adicionales para la solicitud fetch (ej: method, body).
+ * @returns {Promise<Response>} La respuesta de la solicitud fetch.
+ */
+export const fetchAuthenticated = async (fullEndpoint, options = {}) => {
+  const token = localStorage.getItem("authToken");
 
-export async function fetchAuthenticated(url, options = {}) {
-    const token = getAuthToken();
+  if (!token) {
+    throw new Error("No se encontró un token de autenticación. Inicie sesión.");
+  }
 
-    const headers = {
-        'Content-Type': 'application/json',
-        ...options.headers,
-    };
+  const headers = {
+    ...options.headers,
+    Authorization: `Bearer ${token}`,
+  };
 
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-    }
+  const response = await fetch(fullEndpoint, {
+    ...options,
+    headers: headers,
+  });
 
-    const response = await fetch(url, {
-        ...options,
-        headers,
-    });
+  if (response.status === 401 || response.status === 403) {
+    localStorage.removeItem("authToken");
+    console.error("Token inválido o expirado. Sesión cerrada.");
+  }
 
-    if (response.status === 401 || response.status === 403) {
-        console.error("Autenticación fallida o expirada.");
-        const error = new Error("No autorizado. Sesión expirada.");
-        error.statusCode = response.status;
-        throw error;
-    }
-
-    if (!response.ok) {
-        let errorMessage = `HTTP Error: ${response.status} ${response.statusText}`;
-        
-        try {
-            const errorBody = await response.json(); 
-            errorMessage = errorBody.detail || JSON.stringify(errorBody); 
-        } catch (_) { 
-        }
-
-        throw new Error(errorMessage);
-    }
-    
-    const data = await response.json(); 
-    
-    return data;
-}
+  return response;
+};
