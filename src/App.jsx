@@ -1,15 +1,21 @@
+// src/App.jsx
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import Home from "./components/Home";
 import ClientesPorCiudad from "./components/reportes/ClientesPorCiudad";
+import ReporteStock from "./components/reportes/ReporteStock";
+import ReporteRemitos from "./components/reportes/ReporteRemitos.jsx"; // IMPORTADO
+import ProductosPorProveedor from "./components/reportes/ProductosPorProveedor";
 import AppLayout from "./components/layout/AppLayout";
 import ListarProductos from "./components/productos/ListarProductos";
 import ListarClientes from "./components/clientes/ListarClientes";
 import ListarProveedores from "./components/proveedores/ListarProveedores";
 import ListarDepositos from "./components/depositos/ListarDepositos";
 import ListarSucursales from "./components/sucursales/ListarSucursales";
+
 
 function App() {
   return (
@@ -25,6 +31,7 @@ function App() {
             </AppLayout>
           }
         />
+            
         <Route
           path="/clientes-por-ciudad"
           element={
@@ -75,6 +82,35 @@ function App() {
           element={
             <AppLayout>
               <ListarSucursales />
+            </AppLayout>
+          }
+        />
+            
+          <Route
+            path="/stock-por-producto"
+            element={
+              <AppLayout>
+                <ReporteStock />
+              </AppLayout>
+            }
+          />
+          
+        
+        
+        <Route
+          path="/ventas" 
+          element={
+            <AppLayout>
+              <ReporteRemitos /> 
+            </AppLayout>
+          }
+        />
+        
+        <Route
+          path="/Productos-por-Proveedor"
+          element={
+            <AppLayout>
+              <ProductosPorProveedor />
             </AppLayout>
           }
         />
