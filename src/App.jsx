@@ -10,7 +10,11 @@ import ReporteStock from "./components/reportes/ReporteStock";
 import ReporteRemitos from "./components/reportes/ReporteRemitos.jsx"; // IMPORTADO
 import ProductosPorProveedor from "./components/reportes/ProductosPorProveedor";
 import AppLayout from "./components/layout/AppLayout";
-
+import ListarProductos from "./components/productos/ListarProductos";
+import ListarClientes from "./components/clientes/ListarClientes";
+import ListarProveedores from "./components/proveedores/ListarProveedores";
+import ListarDepositos from "./components/depositos/ListarDepositos";
+import ListarSucursales from "./components/sucursales/ListarSucursales";
 
 function App() {
   return (
@@ -26,6 +30,7 @@ function App() {
             </AppLayout>
           }
         />
+
         <Route
           path="/clientes-por-ciudad"
           element={
@@ -34,26 +39,70 @@ function App() {
             </AppLayout>
           }
         />
-          <Route
-            path="/stock-por-producto"
-            element={
-              <AppLayout>
-                <ReporteStock />
-              </AppLayout>
-            }
-          />
-          
-        
-        
+
         <Route
-          path="/ventas" 
+          path="/productos"
           element={
             <AppLayout>
-              <ReporteRemitos /> 
+              <ListarProductos />
             </AppLayout>
           }
         />
-        
+
+        <Route
+          path="/clientes"
+          element={
+            <AppLayout>
+              <ListarClientes />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/proveedores"
+          element={
+            <AppLayout>
+              <ListarProveedores />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/depositos"
+          element={
+            <AppLayout>
+              <ListarDepositos />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/sucursales"
+          element={
+            <AppLayout>
+              <ListarSucursales />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/stock-por-producto"
+          element={
+            <AppLayout>
+              <ReporteStock />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/ventas"
+          element={
+            <AppLayout>
+              <ReporteRemitos />
+            </AppLayout>
+          }
+        />
+
         <Route
           path="/Productos-por-Proveedor"
           element={
@@ -64,7 +113,14 @@ function App() {
         />
       </Route>
 
-      <Route path="*" element={<AppLayout><h1>404 - Página no encontrada</h1></AppLayout>} />
+      <Route
+        path="*"
+        element={
+          <AppLayout>
+            <h1>404 - Página no encontrada</h1>
+          </AppLayout>
+        }
+      />
     </Routes>
   );
 }
