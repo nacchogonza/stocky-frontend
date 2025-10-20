@@ -6,26 +6,26 @@
  * @returns {Promise<Response>} La respuesta de la solicitud fetch.
  */
 export const fetchAuthenticated = async (fullEndpoint, options = {}) => {
-    const token = localStorage.getItem("authToken");
-  
-    if (!token) {
-      throw new Error("No se encontró un token de autenticación. Inicie sesión.");
-    }
-  
-    const headers = {
-      ...options.headers,
-      Authorization: `Bearer ${token}`,
-    };
-  
-    const response = await fetch(fullEndpoint, {
-      ...options,
-      headers: headers,
-    });
-  
-    if (response.status === 401 || response.status === 403) {
-      localStorage.removeItem("authToken");
-      console.error("Token inválido o expirado. Sesión cerrada.");
-    }
-  
-    return response;
+  const token = localStorage.getItem("authToken");
+
+  if (!token) {
+    throw new Error("No se encontró un token de autenticación. Inicie sesión.");
+  }
+
+  const headers = {
+    ...options.headers,
+    Authorization: `Bearer ${token}`,
   };
+
+  const response = await fetch(fullEndpoint, {
+    ...options,
+    headers: headers,
+  });
+
+  if (response.status === 401 || response.status === 403) {
+    localStorage.removeItem("authToken");
+    console.error("Token inválido o expirado. Sesión cerrada.");
+  }
+
+  return response;
+};
