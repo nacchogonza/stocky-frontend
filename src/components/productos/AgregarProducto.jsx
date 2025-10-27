@@ -15,7 +15,7 @@ const AgregarProducto = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [suppliers, setSuppliers] = useState([]);
-  const [producto, setProducto] = useState(true);
+  const [producto, setProducto] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -196,7 +196,7 @@ const AgregarProducto = () => {
                 <p style={{ color: "#e74c3c" }}>{error}</p>
               ) : (
                 <div className="input-group" style={{ marginBottom: "30px" }}>
-                  <label htmlFor="password">Proveedor del Producto</label>
+                  <label htmlFor="id_proveedor">Proveedor del Producto</label>
                   <select
                     id="id_proveedor"
                     {...register("id_proveedor", {
