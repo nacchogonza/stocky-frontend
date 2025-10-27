@@ -97,7 +97,7 @@ const Home = () => {
             <div className="buttons-container">
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/agregar-producto");
                 }}
                 className="btn-red"
               >
@@ -118,7 +118,7 @@ const Home = () => {
             <div className="buttons-container">
               <button
                 onClick={() => {
-                  navigate("#");
+                  navigate("/agregar-cliente");
                 }}
                 className="btn-red"
               >

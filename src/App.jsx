@@ -15,6 +15,8 @@ import ListarClientes from "./components/clientes/ListarClientes";
 import ListarProveedores from "./components/proveedores/ListarProveedores";
 import ListarDepositos from "./components/depositos/ListarDepositos";
 import ListarSucursales from "./components/sucursales/ListarSucursales";
+import AgregarProducto from "./components/productos/AgregarProducto.jsx";
+import AgregarCliente from "./components/clientes/AgregarCliente.jsx";
 
 function App() {
   return (
@@ -108,6 +110,24 @@ function App() {
           element={
             <AppLayout>
               <ProductosPorProveedor />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/agregar-producto"
+          element={
+            <AppLayout>
+              <AgregarProducto />
+            </AppLayout>
+          }
+        />
+
+        <Route
+          path="/agregar-cliente"
+          element={
+            <AppLayout>
+              <AgregarCliente />
             </AppLayout>
           }
         />
