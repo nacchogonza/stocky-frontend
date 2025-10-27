@@ -197,6 +197,90 @@ const Home = () => {
                 Ver Depósitos
               </button>
             </div>
+
+            <h3>Remitos de Venta</h3>
+            <div className="buttons-container">
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Agregar Remito de Venta
+              </button>
+
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Ver Remitos de Venta
+              </button>
+            </div>
+
+            <h3>Remitos de Compra</h3>
+            <div className="buttons-container">
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Agregar Remito de Compra
+              </button>
+
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Ver Remitos de Compra
+              </button>
+            </div>
+
+            <h3>Remitos de Transferencia</h3>
+            <div className="buttons-container">
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Agregar Remito de Transferencia
+              </button>
+
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Ver Remitos de Transferencia
+              </button>
+            </div>
+
+            <h3>Remitos de Devolución</h3>
+            <div className="buttons-container">
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Agregar Remito de Devolución
+              </button>
+
+              <button
+                onClick={() => {
+                  navigate("#");
+                }}
+                className="btn-red"
+              >
+                Ver Remitos de Devolución
+              </button>
+            </div>
           </div>
         </div>
       ) : (
