@@ -162,14 +162,14 @@ const ReporteRemitos = () => {
           </div>
 
           {/* HR con estilo LEGADO */}
-          <hr style={{ borderColor: "#444" }} />
+          <hr style={{ borderColor: "#444", marginBottom: "30px" }} />
 
-          <h2
+          {/* <h2
             className="simple-text"
             style={{ fontSize: "20px", marginTop: "30px" }}
           >
             Reporte Generado para el Período: {fechaDesde} al {fechaHasta}
-          </h2>
+          </h2> */}
 
           {reportLoading && <p className="simple-text">Cargando datos del reporte...</p>}
 
