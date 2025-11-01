@@ -153,7 +153,7 @@ const ReporteRemitos = () => {
                 </label>
                 <button
                   type="submit"
-                  className="custom-button" 
+                  className="btn-primary" 
                   disabled={reportLoading} 
                 >
                   Generar Reporte

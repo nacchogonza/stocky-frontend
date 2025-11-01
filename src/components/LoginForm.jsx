@@ -5,6 +5,7 @@ import "../App.css";
 import { useAuth } from "../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_ENDPOINT } from "../utils/routes";
+import LoaderSecondary from "./LoaderSecondary";
 
 const LoginForm = () => {
   const { login } = useAuth();
@@ -84,7 +85,7 @@ const LoginForm = () => {
           </div>
 
           <button type="submit" className="btn-primary" disabled={isSubmitting}>
-            {isSubmitting ? "Cargando..." : "Entrar"}
+            {isSubmitting ? <LoaderSecondary /> : "Entrar"}
           </button>
         </form>
       </div>
