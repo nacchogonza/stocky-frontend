@@ -52,10 +52,10 @@ const Home = () => {
             {!error && user?.full_name && user?.email ? (
               <>
                 <p className="home-text">
-                  - <b>Usuario:</b> {user?.full_name}
+                  <b>Usuario:</b> {user?.full_name}
                 </p>
                 <p className="home-text">
-                  - <b>Email:</b> {user?.email}
+                  <b>Email:</b> {user?.email}
                 </p>
               </>
             ) : null}

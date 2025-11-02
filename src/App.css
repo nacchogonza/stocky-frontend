@@ -102,7 +102,7 @@ body {
   width: 100%;
   text-align: center;
   transition: transform 0.3s ease;
-  min-height: 450px;
+  min-height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -174,7 +174,7 @@ body {
   width: 100%;
   text-align: center;
   transition: transform 0.3s ease;
-  min-height: 450px;
+  min-height: 78vh;
   display: block;
 }
 
