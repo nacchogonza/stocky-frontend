@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "../App.css";
+import logoStocky from "../assets/logo_gemini_3.png";
 
 import { useAuth } from "../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -51,6 +52,7 @@ const LoginForm = () => {
   return (
     <div className="content-container">
       <div className="login-box">
+        <img src={logoStocky} className="logo-login" />
         <h1>Iniciar Sesión</h1>
 
         <form onSubmit={handleSubmit(onSubmit)}>

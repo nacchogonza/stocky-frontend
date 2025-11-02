@@ -39,6 +39,12 @@ body {
   overflow: hidden;
 }
 
+.logo-login {
+  height: 100px;
+  width: 320px;
+  overflow: hidden;
+}
+
 .logo-anchor {
   height: 50px;
   width: 160px;
