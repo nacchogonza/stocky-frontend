@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "../App.css";
 import logoStocky from "../assets/logo_gemini_3.png";
@@ -11,6 +11,7 @@ import LoaderSecondary from "./LoaderSecondary";
 const LoginForm = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
 
   const {
     register,
@@ -45,7 +46,8 @@ const LoginForm = () => {
       navigate("/", { replace: true });
     } catch (error) {
       console.error("Error de autenticación:", error.message);
-      alert(`Fallo en el Login: ${error.message}`);
+      setError(error)
+      // alert(`Fallo en el Login: ${error.message}`);
     }
   };
 
@@ -85,6 +87,10 @@ const LoginForm = () => {
               <p className="error-message">{errors.password.message}</p>
             )}
           </div>
+
+          {error && !isSubmitting && (
+              <p style={{ color: "#e74c3c" }}>{error.message}</p>
+            )}
 
           <button type="submit" className="btn-primary" disabled={isSubmitting}>
             {isSubmitting ? <LoaderSecondary /> : "Entrar"}
